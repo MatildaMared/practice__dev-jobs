@@ -1,2 +1,11 @@
 :root {
+    --max-width: 1300px;
+
+    --color-white: #EEE;
+
+    --font-size-s: 14px;
+    --font-size-base: 16px;
+    --font-size-m: 20px;
+    --font-size-l: 24px;
+    --font-size-xl: 32px;
 }
