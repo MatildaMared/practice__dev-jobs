@@ -3,6 +3,21 @@
 </script>
 
 <script lang="ts">
+	import { onMount } from "svelte";
+
+	import type { Job } from "./../interfaces/Job";
+	let jobs: Job[] = [];
+
+	async function getJobs() {
+		console.log("In mount");
+		const result = await fetch("/api/jobs");
+		const data = await result.json();
+		jobs = data.jobs;
+	}
+
+	onMount(() => {
+		getJobs();
+	});
 </script>
 
 <svelte:head>
@@ -11,9 +26,10 @@
 </svelte:head>
 
 <section>
-	<h1>
-		Dev Jobs
-	</h1>
+	<h1>Dev Jobs</h1>
+	{#each jobs as job}
+		<h2>{job.company}</h2>
+	{/each}
 </section>
 
 <style>
