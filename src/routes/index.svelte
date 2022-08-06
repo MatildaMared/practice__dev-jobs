@@ -5,7 +5,7 @@
 <script lang="ts">
 	import { onMount } from "svelte";
 
-	import type { Job } from "./../interfaces/Job";
+	import type { Job } from "../interfaces/Job";
 	let jobs: Job[] = [];
 
 	async function getJobs() {
