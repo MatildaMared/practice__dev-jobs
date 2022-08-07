@@ -1,14 +1,21 @@
 :root {
     --max-width: 1300px;
 
-    --color-white: #EEE;
-
     --font-size-s: 14px;
     --font-size-base: 16px;
     --font-size-m: 20px;
     --font-size-l: 24px;
     --font-size-xl: 32px;
 
+    --color-white: #EEE;
     --color-primary: hsla(234, 76%, 62%, 1.0);
     --color-primary-light: hsla(235, 93%, 78%, 1.0);
+
+    --color-background-dark: hsla(219, 33%, 10%, 1.0);
+    --color-background-light: #EEE;
+    --color-background: #EEE;
+
+    --color-text: hsla(217, 33%, 14%, 1.0);
+    --color-text-light: hsla(217, 33%, 14%, 1.0);
+    --color-text-dark: var(--color-white);
 }

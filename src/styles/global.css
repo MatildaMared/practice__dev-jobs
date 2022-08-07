@@ -2,6 +2,8 @@ body {
     font-family: 'Kumbh Sans', sans-serif;
     font-size: var(--font-size-base);
     font-weight: 300;
+    background-color: var(--color-background);
+    color: var(--color-text);
 }
 
 h1 {

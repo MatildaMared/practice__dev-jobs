@@ -1,13 +1,22 @@
 <script lang="ts">
+	import {setDarkTheme, setLightTheme} from "../../utils/setColorTheme";
+
 	let value = "light";
 	let checked = false;
 
 	function handleToggleTheme(event) {
 		const isChecked = event.target.getAttribute("aria-checked");
-		checked = isChecked === "true" ? false : true;
+		checked = isChecked !== "true";
 		value = checked ? "dark" : "light";
-		console.log("Checked: ", checked);
-		console.log("Value: ", value);
+		updateColorTheme(value);
+	}
+
+	function updateColorTheme(value) {
+		if (value === "dark") {
+			setDarkTheme();
+		} else {
+			setLightTheme();
+		}
 	}
 </script>
 
