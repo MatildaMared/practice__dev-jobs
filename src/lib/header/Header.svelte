@@ -1,5 +1,14 @@
 <script lang="ts">
+	let value = "light";
+	let checked = false;
 
+	function handleToggleTheme(event) {
+		const isChecked = event.target.getAttribute("aria-checked");
+		checked = isChecked === "true" ? false : true;
+		value = checked ? "dark" : "light";
+		console.log("Checked: ", checked);
+		console.log("Value: ", value);
+	}
 </script>
 
 <header>
@@ -7,6 +16,8 @@
         <h1 class="heading">devjobs</h1>
         <div class="theme-toggle">
             <img src="/images/desktop/icon-sun.svg" alt="Sun icon"/>
+            <button class="toggle" aria-checked={checked} on:click={handleToggleTheme}
+                    role="switch"></button>
             <img src="/images/desktop/icon-moon.svg" alt="Moon icon"/>
         </div>
     </div>
@@ -46,6 +57,45 @@
             display: flex;
             align-items: center;
             gap: 16px;
+        }
+
+        .toggle {
+            width: 40px;
+            height: 24px;
+            border: none;
+            border-radius: 16px;
+            background: var(--color-white);
+            cursor: pointer;
+            transition: all .2s ease-in-out;
+
+            &:focus {
+                outline: 2px solid var(--color-white);
+                outline-offset: 2px;
+            }
+
+            &::before {
+                content: "";
+                display: block;
+                width: 14px;
+                height: 14px;
+                border-radius: 16px;
+                background: var(--color-primary);
+                transition: all .2s ease-in-out;
+
+            }
+
+            &[aria-checked="true"] {
+                &::before {
+                    transform: translateX(14px);
+                }
+            }
+
+            &:hover {
+                &::before {
+                    width: 16px;
+                    height: 16px;
+                }
+            }
         }
     }
 </style>

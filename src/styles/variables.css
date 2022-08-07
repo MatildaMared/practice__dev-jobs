@@ -8,4 +8,7 @@
     --font-size-m: 20px;
     --font-size-l: 24px;
     --font-size-xl: 32px;
+
+    --color-primary: hsla(234, 76%, 62%, 1.0);
+    --color-primary-light: hsla(235, 93%, 78%, 1.0);
 }
