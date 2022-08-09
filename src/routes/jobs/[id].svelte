@@ -9,6 +9,7 @@
 
 <script lang="ts">
 	import {getJobById} from "../../utils/getJobById";
+	import Button from "../../lib/button/Button.svelte";
 
 	export let id;
 </script>
@@ -21,7 +22,13 @@
             <div class="logo-wrapper" style={`background-color: ${job.logoBackground}`}>
                 <img src={job.logo} alt={`${job.company} logo`}/>
             </div>
-            <h2>{job.company}</h2>
+            <div class="company-name">
+                <h2>{job.company}</h2>
+                <p class="website">{job.company}.com</p>
+            </div>
+            <Button secondary onClick={() => window.open(job.website, "target: _blank")}>
+                Company Site
+            </Button>
         </div>
     {:catch error}
         <p>Could not find a job with that ID, please try again.</p>
@@ -33,7 +40,7 @@
     }
 
     .header {
-        padding: 16px;
+        padding: 32px;
         margin-top: -32px;
         background-color: var(--color-background-lighter);
         border-radius: 8px;
@@ -51,5 +58,15 @@
         border-radius: 8px;
         margin-top: -42px;
         margin-bottom: 16px;
+    }
+
+    .company-name {
+        text-align: center;
+        margin-bottom: 16px;
+    }
+
+    .website {
+        color: var(--color-gray);
+        text-transform: lowercase;
     }
 </style>

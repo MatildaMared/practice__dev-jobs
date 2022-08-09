@@ -1,0 +1,38 @@
+<script lang="ts">
+	export let secondary = false;
+	export let onClick;
+
+	console.log(secondary);
+	const className = secondary ? "secondary" : "primary";
+	console.log(className);
+</script>
+
+<button on:click={onClick} class={secondary ? "secondary" : "primary"}>
+    <slot/>
+</button>
+
+<style lang="scss">
+    button {
+        background-color: var(--color-primary);
+        border: none;
+        padding: 16px 32px;
+        cursor: pointer;
+        border-radius: 6px;
+        transition: all 0.2s ease-in-out;
+        color: var(--color-white);
+        font-weight: 700;
+
+        &:hover {
+            background-color: var(--color-button-hover);
+        }
+
+        &.secondary {
+            background-color: var(--color-button-secondary);
+            color: var(--color-button-secondary-text);
+
+            &:hover {
+                background-color: var(--color-button-secondary-hover);
+            }
+        }
+    }
+</style>

@@ -27,4 +27,18 @@
     --color-gray: hsla(211, 19%, 51%, 1.0);
     --color-gray-dark: hsla(212, 20%, 51%, 1.0);
     --color-gray-light: hsla(210, 22%, 96%, 1.0);
+
+    --color-button-hover: hsla(235, 93%, 78%, 1.0);
+
+    --color-button-secondary: hsla(236, 79%, 96%, 1.0);
+    --color-button-secondary-light: hsla(236, 79%, 96%, 1.0);
+    --color-button-secondary-dark: hsla(219, 18%, 22%, 1.0);
+
+    --color-button-secondary-hover: hsla(234, 79%, 87%, 1.0);
+    --color-button-secondary-hover-light: hsla(234, 79%, 87%, 1.0);
+    --color-button-secondary-hover-dark: hsla(220, 7%, 44%, 1.0);
+
+    --color-button-secondary-text: hsla(234, 76%, 62%, 1.0);
+    --color-button-secondary-text-light: hsla(234, 76%, 62%, 1.0);
+    --color-button-secondary-text-dark: #EEE;
 }

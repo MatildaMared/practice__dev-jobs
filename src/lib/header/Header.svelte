@@ -105,6 +105,7 @@
                 &::before {
                     width: 16px;
                     height: 16px;
+                    background: var(--color-primary-light);
                 }
             }
         }
