@@ -1,6 +1,4 @@
 export async function getJobById(id: string) {
-	console.log("Hi");
-	console.log("Id is: ", id);
 	const response = await fetch(`/api/jobs/${id}`);
 	const data = await response.json();
 

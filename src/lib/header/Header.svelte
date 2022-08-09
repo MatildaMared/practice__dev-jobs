@@ -36,8 +36,10 @@
     @use "../../styles/breakpoints.scss" as *;
 
     header {
+        min-height: 136px;
         display: flex;
         justify-content: space-between;
+        align-items: flex-start;
         background: url("/images/mobile/bg-pattern-header.svg") no-repeat center;
         background-size: cover;
         padding: 32px;
