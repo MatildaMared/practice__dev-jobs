@@ -8,12 +8,17 @@
     --font-size-xl: 32px;
 
     --color-white: #EEE;
+
     --color-primary: hsla(234, 76%, 62%, 1.0);
     --color-primary-light: hsla(235, 93%, 78%, 1.0);
 
     --color-background-dark: hsla(219, 33%, 10%, 1.0);
-    --color-background-light: #EEE;
-    --color-background: #EEE;
+    --color-background-light: hsla(210, 22%, 96%, 1.0);
+    --color-background: hsla(210, 22%, 96%, 1.0);
+
+    --color-background-lighter-dark: hsla(217, 33%, 14%, 1.0);
+    --color-background-lighter-light: hsla(0, 0%, 100%, 1.0);
+    --color-background-lighter: hsla(0, 0%, 100%, 1.0);
 
     --color-text: hsla(217, 33%, 14%, 1.0);
     --color-text-light: hsla(217, 33%, 14%, 1.0);
