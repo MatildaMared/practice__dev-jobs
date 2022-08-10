@@ -6,6 +6,7 @@
 	import {onMount} from "svelte";
 
 	import type {Job} from "../interfaces/Job";
+	import Header from "../lib/header/Header.svelte";
 
 	let jobs: Job[] = [];
 
@@ -28,7 +29,9 @@
 <section>
     <h1>Dev Jobs</h1>
     {#each jobs as job}
-        <h2>{job.company}</h2>
+        <a href={`jobs/${job.id}`}>
+            <h2>{job.company}</h2>
+        </a>
     {/each}
 </section>
 

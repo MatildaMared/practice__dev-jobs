@@ -22,7 +22,9 @@
 
 <header>
     <div class="content">
-        <h1 class="heading">devjobs</h1>
+        <a href="/">
+            <h1 class="heading">devjobs</h1>
+        </a>
         <div class="theme-toggle">
             <img src="/images/desktop/icon-sun.svg" alt="Sun icon"/>
             <button class="toggle" aria-checked={checked} on:click={handleToggleTheme}
