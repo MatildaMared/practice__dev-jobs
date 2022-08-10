@@ -28,5 +28,10 @@
     @use "./src/styles/breakpoints" as *;
 
     section {
+
+        > p {
+            margin-top: 32px;
+            text-align: center;
+        }
     }
 </style>
