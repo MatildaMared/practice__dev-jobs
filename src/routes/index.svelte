@@ -3,13 +3,13 @@
 </script>
 
 <script lang="ts">
-	import { onMount } from "svelte";
+	import {onMount} from "svelte";
 
-	import type { Job } from "../interfaces/Job";
+	import type {Job} from "../interfaces/Job";
+
 	let jobs: Job[] = [];
 
 	async function getJobs() {
-		console.log("In mount");
 		const result = await fetch("/api/jobs");
 		const data = await result.json();
 		jobs = data.jobs;
@@ -21,27 +21,27 @@
 </script>
 
 <svelte:head>
-	<title>Dev Jobs 👩‍💻</title>
-	<meta name="description" content="Find your next developer job today!" />
+    <title>Dev Jobs 👩‍💻</title>
+    <meta name="description" content="Find your next developer job today!"/>
 </svelte:head>
 
 <section>
-	<h1>Dev Jobs</h1>
-	{#each jobs as job}
-		<h2>{job.company}</h2>
-	{/each}
+    <h1>Dev Jobs</h1>
+    {#each jobs as job}
+        <h2>{job.company}</h2>
+    {/each}
 </section>
 
 <style>
-	section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex: 1;
-	}
+    section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+    }
 
-	h1 {
-		width: 100%;
-	}
+    h1 {
+        width: 100%;
+    }
 </style>
