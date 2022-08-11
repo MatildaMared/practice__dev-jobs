@@ -1,52 +1,50 @@
 export function setLightTheme() {
-	document.documentElement.style.setProperty(
+	const root = document.documentElement;
+
+	root.style.setProperty(
 		"--color-background",
 		"var(--color-background-light)",
 	);
-	document.documentElement.style.setProperty(
-		"--color-text",
-		"var(--color-text-light)",
-	);
-	document.documentElement.style.setProperty(
+	root.style.setProperty("--color-text", "var(--color-text-light)");
+	root.style.setProperty(
 		"--color-background-lighter",
 		"var(--color-background-lighter-light)",
 	);
-	document.documentElement.style.setProperty(
+	root.style.setProperty(
 		"--color-button-secondary",
 		"var(--color-button-secondary-light)",
 	);
-	document.documentElement.style.setProperty(
+	root.style.setProperty(
 		"--color-button-secondary-hover",
 		"var(--color-button-secondary-hover-light)",
 	);
-	document.documentElement.style.setProperty(
+	root.style.setProperty(
 		"--color-button-secondary-text",
 		"var(--color-button-secondary-text-light)",
 	);
 }
 
 export function setDarkTheme() {
-	document.documentElement.style.setProperty(
+	const root = document.documentElement;
+
+	root.style.setProperty(
 		"--color-background",
 		"var(--color-background-dark)",
 	);
-	document.documentElement.style.setProperty(
-		"--color-text",
-		"var(--color-text-dark)",
-	);
-	document.documentElement.style.setProperty(
+	root.style.setProperty("--color-text", "var(--color-text-dark)");
+	root.style.setProperty(
 		"--color-background-lighter",
 		"var(--color-background-lighter-dark)",
 	);
-	document.documentElement.style.setProperty(
+	root.style.setProperty(
 		"--color-button-secondary",
 		"var(--color-button-secondary-dark)",
 	);
-	document.documentElement.style.setProperty(
+	root.style.setProperty(
 		"--color-button-secondary-hover",
 		"var(--color-button-secondary-hover-dark)",
 	);
-	document.documentElement.style.setProperty(
+	root.style.setProperty(
 		"--color-button-secondary-text",
 		"var(--color-button-secondary-text-dark)",
 	);
