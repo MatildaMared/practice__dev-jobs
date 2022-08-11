@@ -7,7 +7,7 @@
 	console.log(className);
 </script>
 
-<button on:click={onClick} class={secondary ? "secondary" : "primary"}>
+<button on:click={onClick} class={secondary ? "secondary button" : "primary button"}>
     <slot/>
 </button>
 
