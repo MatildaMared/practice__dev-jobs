@@ -46,7 +46,6 @@
         width: 100%;
         max-width: var(--max-width);
         margin: 32px auto;
-        border: 1px solid red;
         display: grid;
         grid-template-columns: 1fr;
         gap: 32px;
