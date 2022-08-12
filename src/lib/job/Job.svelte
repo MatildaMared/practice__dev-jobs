@@ -52,6 +52,11 @@
 <style lang="scss">
     @use "../../styles/breakpoints" as *;
 
+    section {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
     .header {
         padding: 32px;
         margin-top: -32px;
