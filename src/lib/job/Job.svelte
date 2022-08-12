@@ -9,52 +9,69 @@
     <title>DevJobs 👩‍💻 – {job.company}</title>
 </svelte:head>
 
-<section class="header">
-    <div class="logo-wrapper" style={`background-color: ${job.logoBackground}`}>
-        <img src={job.logo} alt={`${job.company} logo`}/>
-    </div>
-    <div class="company-name">
-        <h2>{job.company}</h2>
-        <p class="website">{job.company}.com</p>
-    </div>
-    <Button secondary onClick={() => window.open(job.website, "target: _blank")}>
-        Company Site
-    </Button>
-</section>
-<section class="main">
-    <div class="overview">
-        <div>
-            <p class="posted-at">{job.postedAt} – {job.contract}</p>
-            <h2>{job.position}</h2>
-            <p class="location">{job.location}</p>
+<div class="content">
+    <section class="header">
+        <div class="logo-wrapper" style={`background-color: ${job.logoBackground}`}>
+            <img src={job.logo} alt={`${job.company} logo`}/>
         </div>
-        <Button onClick={() => window.open(job.apply, "_blank")}>Apply Now</Button>
+        <div class="company-name">
+            <h2>{job.company}</h2>
+            <p class="website">{job.company}.com</p>
+        </div>
+        <Button secondary onClick={() => window.open(job.website, "target: _blank")}>
+            Company Site
+        </Button>
+    </section>
+
+    <section class="main">
+        <div class="overview">
+            <div>
+                <p class="posted-at">{job.postedAt} – {job.contract}</p>
+                <h2>{job.position}</h2>
+                <p class="location">{job.location}</p>
+            </div>
+            <Button onClick={() => window.open(job.apply, "_blank")}>Apply Now</Button>
+        </div>
+        <p class="description">
+            {job.description}
+        </p>
+        <h3>Requirements</h3>
+        <p>{job.requirements.content}</p>
+        <ul>
+            {#each job.requirements.items as requirement}
+                <li>{requirement}</li>
+            {/each}
+        </ul>
+        <h3>What You Will Do</h3>
+        <p>{job.role.content}</p>
+        <ol>
+            {#each job.role.items as role}
+                <li>{role}</li>
+            {/each}
+        </ol>
+    </section>
+</div>
+
+<section class="footer">
+    <div class="footer__content">
+        <div class="footer__description">
+            <h3>{job.position}</h3>
+            <p>{job.company}</p>
+        </div>
+        <Button onClick={() => window.open(job.apply, "_blank")}>Apply now</Button>
     </div>
-    <p class="description">
-        {job.description}
-    </p>
-    <h3>Requirements</h3>
-    <p>{job.requirements.content}</p>
-    <ul>
-        {#each job.requirements.items as requirement}
-            <li>{requirement}</li>
-        {/each}
-    </ul>
-    <h3>What You Will Do</h3>
-    <p>{job.role.content}</p>
-    <ol>
-        {#each job.role.items as role}
-            <li>{role}</li>
-        {/each}
-    </ol>
 </section>
 
 <style lang="scss">
     @use "../../styles/breakpoints" as *;
 
-    section {
+    .header, .main {
         max-width: 800px;
         margin: 0 auto;
+    }
+
+    .content {
+        padding: 0 16px;
     }
 
     .header {
@@ -186,6 +203,38 @@
         .location {
             color: var(--color-primary);
             font-weight: 700;
+        }
+    }
+
+    .footer {
+        width: 100%;
+        background-color: var(--color-background-lighter);
+        padding: 0 16px;
+
+        &__content {
+            padding: 24px 0;
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        :global(button) {
+            width: 100%;
+        }
+
+        &__description {
+            display: none;
+        }
+
+        @media (min-width: $breakpoint-tablet-portrait) {
+            &__description {
+                display: block;
+            }
+
+            :global(button) {
+                width: auto;
+            }
         }
     }
 </style>
