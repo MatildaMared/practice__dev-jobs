@@ -22,6 +22,10 @@ export function setLightTheme() {
 		"--color-button-secondary-text",
 		"var(--color-button-secondary-text-light)",
 	);
+	root.style.setProperty(
+		"--color-text-heading",
+		"var(--color-text-heading-light)",
+	);
 }
 
 export function setDarkTheme() {
@@ -47,5 +51,9 @@ export function setDarkTheme() {
 	root.style.setProperty(
 		"--color-button-secondary-text",
 		"var(--color-button-secondary-text-dark)",
+	);
+	root.style.setProperty(
+		"--color-text-heading",
+		"var(--color-text-heading-dark)",
 	);
 }
