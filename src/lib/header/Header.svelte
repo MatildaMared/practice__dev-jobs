@@ -62,6 +62,12 @@
             align-items: center;
         }
 
+        a:focus {
+            outline: 2px solid var(--color-white);
+            border-radius: 8px;
+            outline-offset: 4px;
+        }
+
         .heading {
             color: var(--color-white);
         }
@@ -83,7 +89,7 @@
 
             &:focus {
                 outline: 2px solid var(--color-white);
-                outline-offset: 2px;
+                outline-offset: 4px;
             }
 
             &::before {
