@@ -22,6 +22,11 @@
         color: var(--color-white);
         font-weight: 700;
 
+        &:focus {
+            outline: 2px solid var(--color-primary);
+            outline-offset: 4px;
+        }
+
         &:hover {
             background-color: var(--color-button-hover);
         }
