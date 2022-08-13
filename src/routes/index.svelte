@@ -8,13 +8,16 @@
 	import type {Job} from "../interfaces/Job";
 	import Header from "../lib/header/Header.svelte";
 	import JobCard from "../lib/job-card/JobCard.svelte";
+	import Search from "../lib/search/Search.svelte";
 
 	let jobs: Job[] = [];
+	let filteredJobs: Job[] = [];
 
 	async function getJobs() {
 		const result = await fetch("/api/jobs");
 		const data = await result.json();
 		jobs = data.jobs;
+		filteredJobs = data.jobs;
 	}
 
 	onMount(() => {
@@ -27,9 +30,11 @@
     <meta name="description" content="Find your next developer job today!"/>
 </svelte:head>
 
+<Search {jobs} {filteredJobs}/>
+
 <div class="content">
     <section class="job-cards">
-        {#each jobs as job}
+        {#each filteredJobs as job}
             <JobCard job={job}/>
         {/each}
     </section>
