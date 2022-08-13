@@ -34,3 +34,17 @@ h4 {
 p {
     line-height: 1.6;
 }
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-background);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-background-lighter);
+    border-radius: 8px;
+    border: 2px solid var(--color-background);
+}

@@ -17,11 +17,21 @@
 </a>
 
 <style lang="scss">
+    a {
+        padding-top: 22px;
+    }
+    a:focus {
+        outline: 2px solid var(--color-primary);
+        outline-offset: 6px;
+        border-radius: 8px;
+    }
+        
     .job {
         padding: 32px;
         background-color: var(--color-background-lighter);
         border-radius: 8px;
         transition: all 0.2s ease-in-out;
+        
 
         &__logo {
             width: 50px;
@@ -32,6 +42,7 @@
             border-radius: 8px;
             margin-bottom: 24px;
             margin-top: -54px;
+            z-index: 10;
         }
 
         &__posted-at {
