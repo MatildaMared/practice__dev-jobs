@@ -6,6 +6,9 @@
 
 <a href={`jobs/${job.id}`}>
     <article class="job">
+        <div class="job__logo" style="background-color: {job.logoBackground};">
+            <img src={job.logo} alt={job.company}/>
+        </div>
         <p class="job__posted-at">{job.postedAt} – {job.contract}</p>
         <h2>{job.position}</h2>
         <p>{job.company}</p>
@@ -19,6 +22,17 @@
         background-color: var(--color-background-lighter);
         border-radius: 8px;
         transition: all 0.2s ease-in-out;
+
+        &__logo {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            margin-bottom: 24px;
+            margin-top: -54px;
+        }
 
         &__posted-at {
             font-size: 14px;

@@ -39,7 +39,7 @@
     @use "../styles/breakpoints" as *;
 
     .content {
-        padding: 0 16px;
+        padding: 32px 16px;
     }
 
     .job-cards {
@@ -48,7 +48,7 @@
         margin: 32px auto;
         display: grid;
         grid-template-columns: 1fr;
-        gap: 32px;
+        gap: 48px 32px;
 
         @media (min-width: $breakpoint-tablet-portrait) {
             grid-template-columns: repeat(2, 1fr);
