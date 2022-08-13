@@ -1,8 +1,17 @@
 <script lang="ts">
 	import {setDarkTheme, setLightTheme} from "../../utils/setColorTheme";
+	import {onMount} from "svelte";
 
 	let value = "light";
 	let checked = false;
+
+	onMount(() => {
+		if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+			value = "dark";
+			checked = true;
+			setDarkTheme();
+		}
+	});
 
 	function handleToggleTheme(event) {
 		const isChecked = event.target.getAttribute("aria-checked");

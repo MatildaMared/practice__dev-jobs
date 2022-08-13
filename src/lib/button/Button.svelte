@@ -1,10 +1,6 @@
 <script lang="ts">
 	export let secondary = false;
 	export let onClick;
-
-	console.log(secondary);
-	const className = secondary ? "secondary" : "primary";
-	console.log(className);
 </script>
 
 <button on:click={onClick} class={secondary ? "secondary button" : "primary button"}>
