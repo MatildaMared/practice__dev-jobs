@@ -1,38 +1,72 @@
-# create-svelte
+# Todo App
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+This is a solution to
+the [Devjobs web app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/devjobs-web-app-HuvC_LP4l)
+. I have been provided with a Figma sketch, assets such as icons and images, and a README file
+explaining the challenge. All the code and functionality is written from scratch by me 😊
 
-## Creating a project
+---
 
-If you're seeing this, you've probably already done this step. Congrats!
+## The challenge 📝
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+Users should be able to:
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+- View the optimal layout for each page depending on their device's screen size
+- See hover states for all interactive elements throughout the site
+- Be able to filter jobs on the index page by title, location, and whether a job is for a full-time
+  position
+- Be able to click a job from the index page so that they can read more information and apply for
+  the job
+- **Bonus**: Have the correct color scheme chosen for them based on their computer preferences. _
+  Hint_: Research `prefers-color-scheme` in CSS.
 
-## Developing
+---
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+## Screenshots 📸
 
-```bash
-npm run dev
+![Mobile View](https://user-images.githubusercontent.com/43721548/184468899-2a16171e-a078-48ec-8435-865537492964.png)
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+![Desktop View](https://user-images.githubusercontent.com/43721548/184468888-76cd4b0c-5e3b-4653-bb7e-922d548af1a6.png)
 
-## Building
+---
 
-To create a production version of your app:
+## Links 🌍
 
-```bash
-npm run build
-```
+- [GitHub Repo](https://github.com/MatildaMared/practice__dev-jobs "Repository")
 
-You can preview the production build with `npm run preview`.
+- [Live Demo](https://dev-jobs-seven.vercel.app/ "Live View")
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+---
+
+## Technologies used 💻
+
+- HTML
+- SCSS
+- JavaScript
+- Svelte
+
+---
+
+## What I learned 👩‍🎓
+
+For me, the main learning opportunities in this project was:
+
+1. Gaining a deeper understanding of Svelte
+2. Practicing transforming a Figma sketch to an actual app
+3. Implementing the ability to switch color themes
+
+---
+
+## Continued development ✏️
+
+Coming soon...
+
+---
+
+## Author 👩‍💻
+
+**Matilda Mared**
+
+- [GitHub Profile](https://github.com/MatildaMared "MatildaMared")
+- [LinkedIn Profile](https://www.linkedin.com/in/matilda-mared "MatildaMared")
+- [Email](mailto:matildamared@live.se?subject=Hi "Hi!")
