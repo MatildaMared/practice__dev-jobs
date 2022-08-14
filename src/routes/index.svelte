@@ -20,6 +20,25 @@
 		filteredJobs = data.jobs;
 	}
 
+	function filterJobs(event) {
+		const {searchString, activeFilter, showFullTimeOnly} = event.detail;
+		let newJobs = [...jobs];
+
+		if (activeFilter === "title" && searchString.length > 0) {
+			newJobs = jobs.filter(job => {
+				return job.position.toLowerCase().includes(searchString.toLowerCase());
+			});
+		} else if (activeFilter === "location" && searchString.length > 0) {
+			newJobs = jobs.filter(job => job.location.includes(event.detail.value));
+		}
+
+		if (showFullTimeOnly) {
+			newJobs = newJobs.filter(job => job.contract === "Full Time");
+		}
+
+		filteredJobs = newJobs;
+	}
+
 	onMount(() => {
 		getJobs();
 	});
@@ -30,7 +49,7 @@
     <meta name="description" content="Find your next developer job today!"/>
 </svelte:head>
 
-<Search {jobs} {filteredJobs}/>
+<Search on:filter={filterJobs}/>
 
 <div class="content">
     <section class="job-cards">
