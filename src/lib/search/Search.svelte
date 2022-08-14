@@ -28,28 +28,35 @@
 	}
 </script>
 
-<form on:submit={onSubmit}>
-    <label>
-        <img src="/images/desktop/icon-search.svg" alt="Search"/>
-        <input type="text" bind:value={titleSearchString} placeholder="Filter by title...">
-    </label>
-    <label>
-        <img src="/images/desktop/icon-location.svg" alt="Location"/>
-        <input type="text" bind:value={locationSearchString} placeholder="Filter by location...">
-    </label>
-    <div>
+<div class="container">
+    <form on:submit={onSubmit}>
         <label>
-            <input name="fulltime-only" type="checkbox" bind:checked={showFullTimeOnly}>
-            Full Time Only
+            <img src="/images/desktop/icon-search.svg" alt="Search"/>
+            <input type="text" bind:value={titleSearchString} placeholder="Filter by title...">
         </label>
-        <Button type="submit" onClick={() => filterJobs(titleSearchString, locationSearchString, 
+        <label>
+            <img src="/images/desktop/icon-location.svg" alt="Location"/>
+            <input type="text" bind:value={locationSearchString}
+                   placeholder="Filter by location...">
+        </label>
+        <div>
+            <label>
+                <input name="fulltime-only" type="checkbox" bind:checked={showFullTimeOnly}>
+                Full Time Only
+            </label>
+            <Button type="submit" onClick={() => filterJobs(titleSearchString, locationSearchString, 
     activeFilter, showFullTimeOnly)}>
-            Search
-        </Button>
-    </div>
-</form>
+                Search
+            </Button>
+        </div>
+    </form>
+</div>
 
 <style lang="scss">
+    .container {
+        padding: 0 16px;
+    }
+
     form {
         background-color: var(--color-background-lighter);
         width: 100%;
