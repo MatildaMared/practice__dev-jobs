@@ -1,9 +1,10 @@
 <script lang="ts">
 	export let secondary = false;
 	export let onClick;
+	export let type = "button";
 </script>
 
-<button on:click={onClick} class={secondary ? "secondary button" : "primary button"}>
+<button {type} on:click={onClick} class={secondary ? "secondary button" : "primary button"}>
     <slot/>
 </button>
 

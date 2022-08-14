@@ -21,15 +21,19 @@
 	}
 
 	function filterJobs(event) {
-		const {searchString, activeFilter, showFullTimeOnly} = event.detail;
+		const {titleSearchString, locationSearchString, activeFilter, showFullTimeOnly} =
+			event.detail;
 		let newJobs = [...jobs];
 
-		if (activeFilter === "title" && searchString.length > 0) {
-			newJobs = jobs.filter(job => {
-				return job.position.toLowerCase().includes(searchString.toLowerCase());
+		if (titleSearchString.length > 0) {
+			newJobs = newJobs.filter(job => {
+				return job.position.toLowerCase().includes(titleSearchString.toLowerCase());
 			});
-		} else if (activeFilter === "location" && searchString.length > 0) {
-			newJobs = jobs.filter(job => job.location.includes(event.detail.value));
+		}
+
+		if (locationSearchString.length > 0) {
+			newJobs = newJobs.filter(job =>
+				job.location.toLowerCase().includes(locationSearchString.toLowerCase()));
 		}
 
 		if (showFullTimeOnly) {
