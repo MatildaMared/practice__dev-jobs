@@ -32,10 +32,12 @@
     <form on:submit={onSubmit}>
         <label>
             <img src="/images/desktop/icon-search.svg" alt="Search"/>
+            <span class="screen-reader-text">Filter by title</span>
             <input type="text" bind:value={titleSearchString} placeholder="Filter by title...">
         </label>
         <label>
             <img src="/images/desktop/icon-location.svg" alt="Location"/>
+            <span class="screen-reader-text">Filter by location</span>
             <input type="text" bind:value={locationSearchString}
                    placeholder="Filter by location...">
         </label>
@@ -187,6 +189,15 @@
             @media (min-width: $breakpoint-tablet-landscape) {
                 display: none;
             }
+        }
+
+        .screen-reader-text {
+            position: absolute;
+            height: 1px;
+            width: 1px;
+            clip: rect(1px, 1px, 1px, 1px);
+            clip-path: polygon(0px 0px, 0px 0px, 0px 0px);
+            overflow: hidden;
         }
     }
 </style>
