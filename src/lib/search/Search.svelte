@@ -41,18 +41,22 @@
         </label>
         <div>
             <label>
-                <input name="fulltime-only" type="checkbox" bind:checked={showFullTimeOnly}>
-                Full Time Only
+                <input class="checkbox" name="fulltime-only" type="checkbox"
+                       bind:checked={showFullTimeOnly}>
+                Full Time
             </label>
             <Button type="submit" onClick={() => filterJobs(titleSearchString, locationSearchString, 
     activeFilter, showFullTimeOnly)}>
-                Search
+                <span class="search-text">Search</span>
+                <img class="search-icon" src="/images/desktop/icon-search-white.svg" alt="Search"/>
             </Button>
         </div>
     </form>
 </div>
 
 <style lang="scss">
+    @use "../../styles/breakpoints" as *;
+
     .container {
         padding: 0 16px;
     }
@@ -87,10 +91,46 @@
             border: none;
             font: inherit;
             color: var(--color-text-heading);
+            border-radius: 8px;
+
+            &[type="text"] {
+                width: 100%;
+            }
+
+            &:focus {
+                outline: 2px solid var(--color-primary);
+
+                &[type="checkbox"] {
+                    outline-offset: 16px;
+                    border-radius: 100%;
+                }
+            }
         }
 
         & div {
             padding: 0 16px;
+
+            .checkbox {
+                border: 1px solid red;
+            }
+
+            & label {
+                font-weight: 700;
+                margin: 0 16px 0 8px;
+            }
+        }
+
+        .search-text {
+            display: none;
+            @media (min-width: $breakpoint-tablet-landscape) {
+                display: block;
+            }
+        }
+
+        .search-icon {
+            @media (min-width: $breakpoint-tablet-landscape) {
+                display: none;
+            }
         }
     }
 </style>
