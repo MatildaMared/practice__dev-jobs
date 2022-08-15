@@ -40,9 +40,10 @@
                    placeholder="Filter by location...">
         </label>
         <div>
-            <label>
+            <label class="checkbox-label">
                 <input class="checkbox" name="fulltime-only" type="checkbox"
                        bind:checked={showFullTimeOnly}>
+                <span class="checkmark"></span>
                 Full Time
             </label>
             <Button type="submit" onClick={() => filterJobs(titleSearchString, locationSearchString, 
@@ -109,14 +110,69 @@
 
         & div {
             padding: 0 16px;
+            display: flex;
+            align-items: center;
 
             .checkbox {
-                border: 1px solid red;
+                position: absolute;
+                opacity: 0;
+                cursor: pointer;
+                height: 0;
+                width: 0;
             }
 
-            & label {
+            .checkbox:focus + .checkmark {
+                outline: 2px solid var(--color-primary);
+                outline-offset: 5px;
+            }
+
+            .checkbox-label {
                 font-weight: 700;
                 margin: 0 16px 0 8px;
+                padding-left: 32px;
+                position: relative;
+                cursor: pointer;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+
+                &:hover input ~ .checkmark {
+                    background-color: hsla(214, 17%, 51%, .25);
+                }
+
+                & input:checked ~ .checkmark:after {
+                    display: block;
+                }
+
+                & .checkmark::after {
+                    left: 8px;
+                    top: 4px;
+                    width: 7px;
+                    height: 12px;
+                    border: solid var(--color-primary);
+                    border-width: 0 3px 3px 0;
+                    -webkit-transform: rotate(45deg);
+                    -ms-transform: rotate(45deg);
+                    transform: rotate(45deg);
+                }
+            }
+
+            .checkmark {
+                position: absolute;
+                top: 1px;
+                left: 0;
+                height: 22px;
+                width: 22px;
+                border-radius: 4px;
+                background-color: hsla(214, 17%, 51%, .1);
+                transition: all .2s ease-in-out;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    display: none;
+                }
             }
         }
 
